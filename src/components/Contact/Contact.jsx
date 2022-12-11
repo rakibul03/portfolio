@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
+import { toast } from "react-hot-toast";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_pzbewna",
+        "template_jjbicmc",
+        form.current,
+        "QI9V0-NOdXRX33Ijh"
+      )
+      .then(
+        (result) => {
+          toast.success("Message Sent Successfully");
+        },
+        (error) => {
+          toast.error(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
     <section className="contact section" id="contact">
       <h2 className="section__title">Get in touch</h2>
@@ -54,7 +79,7 @@ const Contact = () => {
         <div className="contact__content">
           <h3 className="contact__title">Write me your project</h3>
 
-          <form className="contact__form">
+          <form ref={form} onSubmit={sendEmail} className="contact__form">
             <div className="contact__form-div">
               <label className="contact__form-tag">Name</label>
               <input
@@ -78,12 +103,13 @@ const Contact = () => {
             <div className="contact__form-div contact__form-area">
               <label className="contact__form-tag">Project</label>
               <textarea
+                type="text"
                 name="project"
                 cols="30"
                 rows="10"
                 className="contact__form-input"
                 placeholder="Write Your Project"
-              ></textarea>
+              />
             </div>
             <button className="button button--flex">
               Send Message
