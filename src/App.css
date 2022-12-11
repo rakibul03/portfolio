@@ -156,6 +156,15 @@ img {
   font-weight: var(--font-medium);
 }
 
+.resume__btn {
+  display: inline-block;
+  background-color: var(--title-color);
+  color: var(--container-color);
+  padding: 0.25rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: var(--font-medium);
+}
+
 .button:hover {
   background-color: var(--title-color-dark);
 }
