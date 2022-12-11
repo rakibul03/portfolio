@@ -27,17 +27,17 @@ const Header = () => {
             </li>
 
             <li className="nav__item">
-              <a href="#skilld" className="nav__link">
+              <a href="#skills" className="nav__link">
                 <i className="uil uil-file nav__icon"></i> Skills
               </a>
             </li>
 
-            <li className="nav__item">
+            {/* <li className="nav__item">
               <a href="#services" className="nav__link">
                 <i className="uil uil-briefcase-alt nav__icon"></i>
                 Services
               </a>
-            </li>
+            </li> */}
 
             <li className="nav__item">
               <a href="#portfolio" className="nav__link">
@@ -52,8 +52,12 @@ const Header = () => {
             </li>
 
             <li className="nav__item">
-              <a download="resume" href={resume} className="resume__btn">
-                <i className="uil uil-message nav__icon"></i> Download Resume
+              <a
+                download="resume"
+                href={resume}
+                className="resume__btn cv__link button--flex"
+              >
+                Download Resume
               </a>
             </li>
           </ul>
