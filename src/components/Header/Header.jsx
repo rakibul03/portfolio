@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import "./Header.css";
-import resume from "../../assets/Resume.pdf";
 
 const Header = () => {
   const [toggle, showToggle] = useState(false);
@@ -32,12 +31,12 @@ const Header = () => {
               </a>
             </li>
 
-            {/* <li className="nav__item">
+            <li className="nav__item">
               <a href="#services" className="nav__link">
                 <i className="uil uil-briefcase-alt nav__icon"></i>
                 Services
               </a>
-            </li> */}
+            </li>
 
             <li className="nav__item">
               <a href="#portfolio" className="nav__link">
@@ -48,16 +47,6 @@ const Header = () => {
             <li className="nav__item">
               <a href="#contact" className="nav__link">
                 <i className="uil uil-message nav__icon"></i> Contact
-              </a>
-            </li>
-
-            <li className="nav__item">
-              <a
-                download="resume"
-                href={resume}
-                className="resume__btn cv__link button--flex"
-              >
-                Download Resume
               </a>
             </li>
           </ul>
